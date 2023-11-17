@@ -133,13 +133,21 @@ import { get } from '../../Services/http'
 //     ]
 //   }
 
+let initialState = {}
+
+const data = window.localStorage.getItem("KANBAN_USER_STATE")
+if (data !== null) initialState = JSON.parse(data).filters
+else await get("")
+
 const boardSlice = createSlice({
   name: 'board',
-  initialState : await get(""),
+  initialState,
   reducers: {
-    
+    preloadState: (state, action) => {
+      state = action.payload
+    },
   },
 })
 
-// export const { add } = boardSlice.actions;
+export const { preloadState } = boardSlice.actions;
 export default boardSlice.reducer;

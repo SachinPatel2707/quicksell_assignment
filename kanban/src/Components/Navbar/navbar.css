@@ -61,5 +61,7 @@
     border              : solid 1px #dddddd;
     border-radius       : 2px;
     outline             : none;
+    padding             : 2px;
+    font-size           : 12px;
     background-color    : var(--navbar-background);
 }

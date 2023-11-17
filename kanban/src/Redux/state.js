@@ -9,4 +9,9 @@ const store = configureStore({
     }
 })
 
+store.subscribe(() => {
+    const state = store.getState();
+    localStorage.setItem('KANBAN_USER_STATE', JSON.stringify(state));
+});
+
 export default store

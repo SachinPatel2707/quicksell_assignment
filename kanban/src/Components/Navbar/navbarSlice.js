@@ -1,19 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
+let initialState = {
     filters : {
-      'Grouping' : ['status', 'user', 'priority'],
+      'Grouping' : ['Status', 'User', 'Priority'],
       'Ordering' : {
-        'status' : ['title', 'priority'],
-        'user' : ['title', 'priority'],
-        'priority' : ['title'],
+        'Status' : ['Title', 'Priority'],
+        'User' : ['Title', 'Priority'],
+        'Priority' : ['Title'],
       },
     },
     selectedFilters : {
-      'Grouping' : '',
-      'Ordering' : '',
+      'Grouping' : 'Status',
+      'Ordering' : 'Priority',
     }
   }
+
+const data = window.localStorage.getItem("KANBAN_USER_STATE")
+if (data !== null) initialState = JSON.parse(data).filters
 
 const navbarSlice = createSlice({
   name: 'navbar',

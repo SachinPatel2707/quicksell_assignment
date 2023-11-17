@@ -54,7 +54,7 @@ const Navbar = () => {
                 <div className = "navbar-filter">
                     <p>Ordering</p>
                     <select value = {selectedOrdering} onChange = {(e) => {handleChange('Ordering', e)}}>
-                        {filterOptions.Ordering.status.map((f) => {
+                        {filterOptions.Ordering[selectedGrouping].map((f) => {
                             return <option key = {f} value = {f}>{f}</option>
                         })}
                     </select>
