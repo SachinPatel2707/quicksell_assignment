@@ -1,0 +1,30 @@
+.column-container {
+    min-height : 10vh;
+    width : 20vw;
+    /* border : solid 1px black; */
+    display : flex;
+    flex-direction : column;
+}
+
+.column-title {
+    min-height: 4vh;
+    width : 100%;
+    margin-bottom : 3vh;
+    display : flex;
+    flex-direction : row;
+    align-items : center;
+}
+
+.column-title svg {
+    width : 15px;
+    height : 15px;
+    color : red;
+}
+
+.column-title p {
+    flex : 1 1 auto;
+}
+
+.column-title #title {
+    flex : 20 1 auto;
+}

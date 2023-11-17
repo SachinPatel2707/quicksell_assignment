@@ -132,13 +132,13 @@ const initialState = {
     ]
   }
 
-const ticketSlice = createSlice({
-  name: 'ticket',
+const boardSlice = createSlice({
+  name: 'board',
   initialState,
   reducers: {
     
   },
 })
 
-// export const { add } = ticketSlice.actions;
-export default ticketSlice.reducer;
+// export const { add } = boardSlice.actions;
+export default boardSlice.reducer;

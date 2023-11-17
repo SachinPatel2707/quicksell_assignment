@@ -1,0 +1,9 @@
+.navbar-container {
+    height : 6vh;
+    width : 100%;
+    padding : 0% 3% 0% 3%;
+    display : flex;
+    align-items : center;
+    background-color : var(--navbar-background);
+    justify-content : space-between;
+}
