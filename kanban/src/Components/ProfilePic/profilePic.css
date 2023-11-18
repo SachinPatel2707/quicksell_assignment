@@ -1,0 +1,32 @@
+.profile-pic {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: #3498db;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .initials {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .online-dot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 7px;
+    height: 7px;
+    background-color: #dddddd;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+  }
+
+  .green {
+    background-color: #2ecc71;
+  }
+  

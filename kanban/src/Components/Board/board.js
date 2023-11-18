@@ -5,6 +5,7 @@ import Column from '../Column/column'
 
 const Board = () => {
     const [view, setView] = useState({})
+    const [cols, setCols] = useState([])
     const tickets = useSelector((store) => store.board.tickets)
     const filters = useSelector((store) => store.filters.selectedFilters)
     let selectedGrouping = useSelector((store) => store.filters.selectedFilters.Grouping.toLowerCase())
@@ -24,21 +25,33 @@ const Board = () => {
                     view[attr].sort((a, b) => a[selectedOrdering].toLowerCase().localeCompare(b[selectedOrdering].toLowerCase()))
                 }
                 else
-                    view[attr].sort((a, b) => a[selectedOrdering] - b[selectedOrdering])
+                    view[attr].sort((a, b) => b[selectedOrdering] - a[selectedOrdering])
             }
             return view
+        }
+        
+        // order of groups as shown in the requirements
+        const orderCols = (cols) => {
+            if (selectedGrouping == 'priority') {
+                cols = ['0', '4', '3', '2', '1']
+            }
+            else if (selectedGrouping == 'status') {
+                cols = ['Backlog', 'Todo', 'In progress', 'Done', 'Canceled']
+            }
+            return cols;
         }
 
         const view = groupAndOrderTickets()
         setView(view)
-        console.log(view)
-    }, [tickets, filters])
+        const cols = orderCols(Object.keys(view))
+        setCols(cols)
+    }, [filters])
 
     return (
         <div className = "board-container">
-            { Object.entries(view).map(([key, value]) => (
-                <Column key = {key} colName = {key} tasks = {value}/>
-            )) }
+            { cols.map((col) => {
+                return <Column key = {col} colName = {col} tasks = {view[col]}/>
+            }) }
         </div>
     )
 }

@@ -1,5 +1,6 @@
 .task-container {
-    width               : 100%;
+    min-width           : inherit;
+    max-width           : inherit;
     height              : fit-content;
     padding             : 1% 3% 1% 3%;
     margin-bottom       : 1vh;
@@ -30,14 +31,16 @@
 }
 
 .task-user-profile {
-    width   : 10%;
-    height  : 100%;
+    width       : 10%;
+    height      : 100%;
+    padding-top : 5px;
 }
 
 .task-footer {
     padding-top     : 15px;
     display         : flex;
     flex-direction  : row;
+    flex-wrap       : wrap;
     column-gap      : 10px;
     align-items     : center;
     color           : var(--secondary-text-color);
@@ -45,10 +48,28 @@
 }
 
 .task-footer p {
-    font-size : 12px;
+    font-size       : 10px;
+    letter-spacing  : 0.7px;
 }
 
 .task-footer svg {
     width   : 15px;
-    height  : 20px;
+    height  : 100%;
+}
+
+.task-footer-tags {
+    width               : 90%;
+    display             : flex;
+    flex-direction      : row;
+    flex-wrap           : wrap;
+}
+
+.task-footer-tags p {
+    border  : 0.5px solid #dddddd;
+    padding : 3px;
+    margin  : 3px;
+}
+
+.remove-column-gap {
+    column-gap : 0px;
 }

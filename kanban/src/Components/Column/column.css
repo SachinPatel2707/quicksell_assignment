@@ -1,14 +1,15 @@
 .column-container {
-    min-height      : 10vh;
-    min-width       : 20vw;
-    max-width       : 25vw;
+    min-height      : 50px;
+    min-width       : 300px;
+    max-width       : 400px;
     display         : flex;
     flex-direction  : column;
 }
 
 .column-title {
     min-height      : 4vh;
-    width           : 100%;
+    min-width       : inherit;
+    max-width       : inherit;
     margin-bottom   : 3vh;
     display         : flex;
     flex-direction  : row;
@@ -22,13 +23,13 @@
 }
 
 .column-title p {
-    flex : 1 1 auto;
-    display : flex;
+    flex            : 1 1 auto;
+    display         : flex;
     justify-content : center;
 }
 
 .column-title #title {
-    flex    : 15 1 auto;
-    color   : var(--primary-text-color);
+    flex            : 15 1 auto;
+    color           : var(--primary-text-color);
     justify-content : initial;
 }

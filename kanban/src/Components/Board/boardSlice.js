@@ -8,7 +8,7 @@ let initialState = {}
 //         "id": "CAM-1",
 //         "title": "Update User Profile Page UI",
 //         "tag": [
-//           "Feature request"
+//           "Feature request","Feature request","Feature request","Feature request",
 //         ],
 //         "userId": "usr-1",
 //         "status": "Todo",
@@ -136,7 +136,7 @@ let initialState = {}
 
 const data = window.localStorage.getItem("KANBAN_USER_STATE")
 if (data !== null) initialState = JSON.parse(data).board
-else await get("")
+else initialState = await get("")
 
 const boardSlice = createSlice({
   name: 'board',
