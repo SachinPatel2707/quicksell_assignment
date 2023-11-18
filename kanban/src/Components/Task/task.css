@@ -36,6 +36,23 @@
     padding-top : 5px;
 }
 
+.task-title {
+    display         : flex;
+    flex-direction  : row;
+    justify-content : space-between;
+}
+
+.task-title p {
+    width : 100%;
+}
+
+.task-title-svg {
+    height  : fit-content;
+    width   :  fit-content;
+    margin  : 3px 5px 0px 0px;
+    cursor  : pointer;
+}
+
 .task-footer {
     padding-top     : 15px;
     display         : flex;

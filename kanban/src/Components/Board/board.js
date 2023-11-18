@@ -45,7 +45,7 @@ const Board = () => {
         setView(view)
         const cols = orderCols(Object.keys(view))
         setCols(cols)
-    }, [filters])
+    }, [filters, tickets])
 
     return (
         <div className = "board-container">

@@ -142,9 +142,15 @@ const boardSlice = createSlice({
   name: 'board',
   initialState,
   reducers: {
-    
+    toggleStatus: (state, action) => {
+      const id = action.payload
+      const ticketToToggle = state.tickets.find((ticket) => ticket.id === id);
+      if (ticketToToggle) {
+        ticketToToggle.status = ticketToToggle.status === 'Done' ? 'Todo' : 'Done';
+      }
+    },
   },
 })
 
-export const { preloadState } = boardSlice.actions;
+export const { toggleStatus } = boardSlice.actions;
 export default boardSlice.reducer;
