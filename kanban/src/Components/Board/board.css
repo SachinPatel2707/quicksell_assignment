@@ -9,3 +9,10 @@
     overflow         : auto;
     background-color : var(--board-background);
 }
+
+@media only screen and (max-width: 450px) {
+    .board-container {
+        display          : flex;
+        flex-direction   : column;
+    }
+}

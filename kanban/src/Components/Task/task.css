@@ -27,7 +27,7 @@
     text-transform  : uppercase;
     color           : var(--secondary-text-color);
     margin-bottom   : 5px;
-    font-size       : 12px;
+    font-size       : calc(var(--primary-font-size) - 2px);
 }
 
 .task-user-profile {
@@ -48,7 +48,7 @@
 }
 
 .task-footer p {
-    font-size       : 10px;
+    font-size       : calc(var(--primary-font-size) - 4px);
     letter-spacing  : 0.7px;
 }
 

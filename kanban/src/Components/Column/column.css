@@ -33,3 +33,13 @@
     color           : var(--primary-text-color);
     justify-content : initial;
 }
+
+@media only screen and (max-width: 450px) {
+    .column-container {
+        margin : 10px 0px 10px 0px;
+    }
+
+    .column-title {
+        margin-bottom : 10px;
+    }
+}
