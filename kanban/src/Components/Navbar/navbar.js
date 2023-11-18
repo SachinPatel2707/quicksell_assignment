@@ -24,7 +24,6 @@ const Navbar = () => {
         if (filter == "Grouping") dispatch(updateGrouping(e.target.value))
         else if (filter == "Ordering") {
             dispatch(updateOrdering(e.target.value))
-            setShowModal(false)
         }
     }
     
