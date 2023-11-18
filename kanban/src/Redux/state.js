@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import boardReducer from '../Components/Board/boardSlice'
 import navbarReducer from '../Components/Navbar/navbarSlice'
+// import commonReducer from './commonSlice'
 
 const store = configureStore({
     reducer : {
         board: boardReducer,
         filters: navbarReducer,
+        // common: commonReducer,
     }
 })
 

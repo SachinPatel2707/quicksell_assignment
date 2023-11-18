@@ -1,8 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { get } from '../../Services/http'
+import { get } from '../Services/http'
 
-let initialState = {}
-// initialState = {
+// const initialState = {
 //     "tickets": [
 //       {
 //         "id": "CAM-1",
@@ -12,7 +11,7 @@ let initialState = {}
 //         ],
 //         "userId": "usr-1",
 //         "status": "Todo",
-//         "priority": 1
+//         "priority": 4
 //       },
 //       {
 //         "id": "CAM-2",
@@ -32,7 +31,7 @@ let initialState = {}
 //         ],
 //         "userId": "usr-2",
 //         "status": "In progress",
-//         "priority": 2
+//         "priority": 1
 //       },
 //       {
 //         "id": "CAM-4",
@@ -42,7 +41,7 @@ let initialState = {}
 //         ],
 //         "userId": "usr-1",
 //         "status": "In progress",
-//         "priority": 2
+//         "priority": 3
 //       },
 //       {
 //         "id": "CAM-5",
@@ -72,7 +71,7 @@ let initialState = {}
 //         ],
 //         "userId": "usr-1",
 //         "status": "Backlog",
-//         "priority": 3
+//         "priority": 2
 //       },
 //       {
 //         "id": "CAM-8",
@@ -132,19 +131,23 @@ let initialState = {}
 //         "available": true
 //       }
 //     ]
-// }
+//   }
 
-const data = window.localStorage.getItem("KANBAN_USER_STATE")
-if (data !== null) initialState = JSON.parse(data).board
-else await get("")
+let initialState = {
 
-const boardSlice = createSlice({
-  name: 'board',
+}
+
+let data = window.localStorage.getItem("KANBAN_USER_STATE")
+data = JSON.parse(data)
+if (data.common !== null) initialState = data.common
+
+const commonSlice = createSlice({
+  name: 'common',
   initialState,
   reducers: {
     
   },
 })
 
-export const { preloadState } = boardSlice.actions;
-export default boardSlice.reducer;
+export const { preloadState } = commonSlice.actions;
+export default commonSlice.reducer;
